@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enumerationtools2
+  labels:
+    app: enumerationtools2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enumerationtools2
+  template:
+    metadata:
+      labels:
+        app: enumerationtools2
+    spec:
+      containers:
+        - name: enumerationtools2
+          image: farhannsss/enumerationtools:2.0
+          ports:
+            - containerPort: 7000
+          imagePullPolicy: Always
